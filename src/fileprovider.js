@@ -1,15 +1,24 @@
 var fs = require('fs');
 var Promise = require('promise');
-var Constants = require(__dirname + '/stubconstants');
+var Constants = require(__dirname + '/StubConstants');
+var Tools = require("../src/Tools");
 
-module.exports = class FileProvider {
+class FileProvider {
     /**
      * Load file's content
      * @param file
      * @return Promise
      */
     loadFile(file) {
-        return Promise.denodeify(fs.readFile)(file, 'utf-8');
+        return Promise.denodeify(fs.readFile)(file, Constants.UTF8);
+    }
+
+    /**
+     * Save content into file
+     * @param file
+     */
+    saveFile(file, data) {
+        return Promise.denodeify(fs.writeFile)(file, data, Constants.UTF8);
     }
 
     /**
@@ -33,7 +42,9 @@ module.exports = class FileProvider {
                 res.send(fileContent)
             })
             .catch((err) => {
-                res.send(err)
+                Tools.sendError(err, res);
             });
     }
-};
+}
+
+module.exports = FileProvider;
