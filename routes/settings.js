@@ -23,7 +23,7 @@ router.get('/:key', function (req, res, next) {
         .then((db) => {
             let key = req.param("key");
             var item = db.data[key];
-            if (item !== undefined) {
+            if (item) {
                 res.send({key: key, value: item});
             } else {
                 res.sendStatus(Constants.Status_NotFound);

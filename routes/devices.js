@@ -15,7 +15,13 @@ router.get('/', function (req, res, next) {
 
 router.get('/:id', function (req, res, next) {
     Device.findOne({_id: req.param("id")})
-        .then((result) => res.send(result))
+        .then((item) => {
+            if (item) {
+                res.send(item)
+            } else {
+                res.sendStatus(Constants.Status_NotFound);
+            }
+        })
         .catch((err) => Tools.sendError(err, res));
 });
 

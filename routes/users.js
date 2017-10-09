@@ -60,15 +60,16 @@ router.post('/:id', function (req, res, next) {
         .then((db) => {
             let itemId = parseInt(req.param("id"));
             let item = _.find(db.data, (item) => item.id === itemId);
-            if (item === undefined) {
+            if (item) {
+                db.removeItem(item);
+                db.addItem(req.body);
+                return db.save();
+            } else {
                 return Promise.reject({
                     status: Constants.Status_NotFound,
                     message: "Not found item for param: " + itemId
                 });
-            } else {
-                db.removeItem(item);
-                db.addItem(req.body);
-                return db.save();
+
             }
         })
         .then(() => {
@@ -86,13 +87,13 @@ router.delete('/:id', function (req, res, next) {
         .then((db) => {
             let itemId = parseInt(req.param("id"));
             let item = _.find(db.data, (item) => item.id === itemId);
-            if (item === undefined) {
+            if (item) {
+                db.removeItem(item);
+            } else {
                 return Promise.reject({
                     status: Constants.Status_NotFound,
                     message: "Not found item for param: " + itemId
                 });
-            } else {
-                db.removeItem(item);
             }
             return db
                 .save()
