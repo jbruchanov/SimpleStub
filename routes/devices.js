@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var MongoSchemas = require(__base + "/src/MongoDBSchema");
+var MongoSchemas = require(__base + "/src/MongoDB");
 var Tools = require(__base + "/src/Tools");
 var Constants = require(__base + "/src/StubConstants");
 

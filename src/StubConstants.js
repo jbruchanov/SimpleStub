@@ -8,7 +8,7 @@ var StubConstants = {
 
     UTF8: 'utf-8',
 
-    MongooseURI: "mongodb://mongodb/stub",
+    MongooseURI: "mongodb://devserver/stub",
 };
 
 module.exports = StubConstants;
