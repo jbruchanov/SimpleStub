@@ -9,6 +9,7 @@ var StubConstants = {
     UTF8: 'utf-8',
 
     MongooseURI: "mongodb://devserver/stub",
+    PostgresSQLURI: "postgres://psql:psql@devserver:5432/simplestub",
 };
 
 module.exports = StubConstants;
