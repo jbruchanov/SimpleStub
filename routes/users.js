@@ -94,10 +94,12 @@ router.delete('/:id', function (req, res, next) {
             } else {
                 db.removeItem(item);
             }
-            return Promise.all([Promise.resolve(item), db.save()]);
+            return db
+                .save()
+                .then(() => Promise.resolve(item));
         })
         .then((item) => {
-            res.send(item[0]);
+            res.send(item);
         })
         .catch((err) => {
             Tools.sendError(err, res);
