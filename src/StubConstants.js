@@ -6,7 +6,9 @@ var StubConstants = {
     Header_ContentType: "Content-Type",
     ContentType_JSON: "application/json",
 
-    UTF8: 'utf-8'
+    UTF8: 'utf-8',
+
+    MongooseURI: "mongodb://mongodb/stub",
 };
 
 module.exports = StubConstants;
