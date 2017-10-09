@@ -28,8 +28,8 @@ var Tools = {
      * @throws AssertionException if not found
      */
     assertContentType(req, type) {
-        assert.ok(req, "req is invalid");
-        assert.ok(type, "type is invalid");
+        assert.ok(req, "param req is invalid");
+        assert.ok(type, "param type is invalid");
         type = type.toLowerCase();
         let header = req.header(Constants.Header_ContentType);
         header = "" || header.toLowerCase();
