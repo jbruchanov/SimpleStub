@@ -1,6 +1,6 @@
 "use strict";
 
-var Constants = require(__dirname + '/StubConstants');
+var Constants = require(__base + '/src/StubConstants');
 var assert = require('assert');
 
 var Tools = {

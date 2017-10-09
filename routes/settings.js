@@ -5,10 +5,10 @@ const FILE = "stub/static/settings.json";
 var express = require('express');
 var router = express.Router();
 
-var Tools = require("../src/Tools");
-var FileProvider = require('../src/FileProvider');
-var SimpleObjectJsonDB = require('../src/SimpleObjectJsonDB');
-var Constants = require('../src/StubConstants');
+var Tools = require(__base + "/src/Tools");
+var FileProvider = require(__base + "/src/FileProvider");
+var SimpleObjectJsonDB = require(__base + "/src/SimpleObjectJsonDB");
+var Constants = require(__base + "/src/StubConstants");
 
 var fp = new FileProvider();
 

@@ -1,7 +1,7 @@
 var fs = require('fs');
 var Promise = require('promise');
-var Constants = require(__dirname + '/StubConstants');
-var Tools = require("../src/Tools");
+var Constants = require(__base + "/src/StubConstants");
+var Tools = require(__base + "/src/Tools");
 
 class FileProvider {
     /**

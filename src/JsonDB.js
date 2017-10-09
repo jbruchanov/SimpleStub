@@ -1,4 +1,4 @@
-var FileProvider = require(__dirname + '/FileProvider');
+var FileProvider = require(__base + "/src/FileProvider");
 var fp = new FileProvider();
 var assert = require('assert');
 var _ = require("lodash");

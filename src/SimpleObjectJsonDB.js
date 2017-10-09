@@ -1,4 +1,4 @@
-var JsonDB = require(__dirname + '/JsonDB');
+var JsonDB = require(__base + "/src/JsonDB");
 var assert = require('assert');
 var _ = require("lodash");
 
