@@ -5,10 +5,10 @@ const FILE = "stub/static/users.json";
 var express = require('express');
 var router = express.Router();
 
-var Tools = require("../src/Tools");
-var FileProvider = require('../src/FileProvider');
-var SimpleArrayJsonDB = require('../src/SimpleArrayJsonDB');
-var Constants = require('../src/StubConstants');
+var Tools = require(__base + "/src/Tools");
+var FileProvider = require(__base + "/src/FileProvider");
+var SimpleArrayJsonDB = require(__base + "/src/SimpleArrayJsonDB");
+var Constants = require(__base + "/src/StubConstants");
 var _ = require("lodash");
 
 var fp = new FileProvider();
